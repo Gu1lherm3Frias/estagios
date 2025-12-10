@@ -83,7 +83,7 @@
                 <div class="col-4 form-group">
                     <b>Gerar Documentos:</b><br><br>
 
-                    @if(($estagio->desempenhoacademico)!=null)
+                    @if(in_array($estagio->tipodeferimento, $estagio->tipodeferimentoOptions()))
                         <a href="/pdfs/parecer/{{$estagio->id}}"target="_blank" >
                         <i class="fas fa-file-pdf"></i> </a>
                         Gerar PDF do Parecer de Mérito
