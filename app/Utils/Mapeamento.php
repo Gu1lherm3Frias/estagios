@@ -66,6 +66,7 @@ class Mapeamento
             'cargo_do_representante_opcional' => 'Cargo do representante da empresa',
             'email_do_representante_opcional' => 'E-mail do representante da empresa',
             'endereco_local_estagio' => 'Endereço do local do estágio',
+            'tipo_instituicao' => 'Tipo de instituição',
             'id' => 'ID',
         ];
 

@@ -31,6 +31,13 @@
     <input type="text" class="form-control" id="horariocompativel" name="horariocompativel" value="{{old('horariocompativel',$estagio->horariocompativel)}}">
     <br>
 
+    <label for="tipo_instituicao"><b>Selecione o tipo de instituição</b></label>
+    <select class="form-control" name="tipo_instituicao">
+        @foreach($estagio->tipoInstituicao() as $instituicao)
+        <option value="{{ $instituicao }}">{{ $instituicao }}</option>
+        @endforeach
+    </select>
+
     <label for="area_estagio"> Selecione a área de atuação do estágio:</label><br>
     @foreach($estagio->area_estagio() as $opcao)
       <input type="checkbox" name="area_estagio[]" value="{{ $opcao }}" @if(in_array($opcao,$areas)) checked @endif> {{ $opcao }}

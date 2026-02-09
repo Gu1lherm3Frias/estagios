@@ -101,20 +101,34 @@ class Estagio extends Model implements Auditable
 
     public function area_estagio(){
 
-        $areas = Area::distinct('area')->pluck('area')->toArray();
-
-        $areas_fixas =  [
-            'Ensino/Educação',
-            'Editoração',
-            'Tradução, interpretação, legendagem',
-            'Revisão, correção e/ou produção de textos',
-            'Tecnologia -  Internet, mídias e ambientes digitais',
-            'Administração (serviços gerais, secretariado, recepção, etc)',
-            'Arte, Comunicação,Cultura e Museus',
-            'Outra'
+        return [
+            'Ensino/educação',
+            'Revisão e correção de textos', 
+            'Tradução, interpretação, legendagem', 
+            'Editoração', 
+            'Arquivos e acervos',
+            'Arte, cultura, comunicação',
+            'Tecnologia e mídias digitais', 
+            'Pesquisa',
+            'Pesquisa de mercado',
+            'Políticas públicas (formulação/ implementação/ avaliação)',
+            'Assessoria/consultoria/ advocacy',
+            'Meio Ambiente',
+            'Geoprocessamento',
+            'Agronegócio',
+            'Planejamento',
+            'Trânsito',
+            'Acompanhamento de projetos/ funções administrativas',
         ];
+    }
 
-        return array_unique(array_merge($areas,$areas_fixas));
+    public function tipoInstituicao(){
+        return [
+            'Instituição/Empresa privada',
+            'Setor público',
+            'Terceiro setor/Organização social/ONG/ Fundação',
+            'Museus/ Instituições culturais ',
+        ];
     }
 
     public function getDataInicialAttribute($value) {

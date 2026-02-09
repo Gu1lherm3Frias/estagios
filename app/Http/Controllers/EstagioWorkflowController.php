@@ -155,6 +155,7 @@ class EstagioWorkflowController extends Controller
             $estagio->analise_academica_user_id = Auth::user()->id;
             $estagio->numparecerista = User::find($estagio->analise_academica_user_id)->codpes;
             $estagio->last_status = $estagio->status;
+            $estagio->tipo_instituicao = $request->tipo_instituicao;
             $estagio->status = 'em_analise_tecnica';
             $estagio->save();
 
