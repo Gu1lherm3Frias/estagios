@@ -31,7 +31,8 @@ class AnaliseAcademicaRequest extends FormRequest
             'atividadesjustificativa'=> 'required',
             'analise_academica'=> 'required',
             'tipodeferimento'=> 'required',
-            'condicaodeferimento'=> 'required_if:tipodeferimento,==,Deferido com Restrição'
+            'condicaodeferimento'=> 'required_if:tipodeferimento,==,Deferido com Restrição',
+            'tipo_instituicao' => 'required'
         ];
 
         if ($this->get('area_estagio')) {

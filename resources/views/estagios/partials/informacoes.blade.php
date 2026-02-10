@@ -20,6 +20,7 @@
                     <li>{{$area}}</li>
                     @endforeach 
                 </ul>
+            <b>Tipo de instituição:</b> {{ $estagio->tipo_instituicao }}<br>
             <b>Análise Acadêmica:</b> {{$estagio->analise_academica}}<br>
             <b>Situação do deferimento do parecer de mérito:</b> {{$estagio->tipodeferimento}}<br>
             @if(($estagio->condicaodeferimento)!=null)
