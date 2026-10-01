@@ -19,8 +19,8 @@ class VagaCrudTest extends DuskTestCase
                 ->type('loginUsuario', 111111)
                 ->press('Login')
                 ->assertSee('Mural de Vagas');
-
             
+            #Create
             $browser->clickLink('Mural de Vagas')
                 ->clickLink("Cadastrar")
                 ->type('titulo', 'Vaga Teste')
@@ -34,6 +34,21 @@ class VagaCrudTest extends DuskTestCase
                 ->type('email', 'teste@gmail.com')
                 ->press('Enviar')
                 ->assertSee('Dados da Vaga');
+
+            #Edit
+            $browser->press('Editar')
+                ->type('titulo', 'Vaga Teste editada')
+                ->type('salario', '14000')
+                ->press('Enviar')
+                ->assertSee('Dados da Vaga');
+                
+            #Delete
+            $browser->clickLink('Mural de Vagas')
+                ->clickLink('Listar')
+                ->click('.destroy_btn')
+                ->assertDialogOpened('Tem certeza que deseja deletar?')
+                ->acceptDialog()
+                ->assertSee('Sem permissão para executar ação');
         });
     }
 }
