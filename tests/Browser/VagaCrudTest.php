@@ -33,8 +33,7 @@ class VagaCrudTest extends DuskTestCase
                 ->type('contato', 'Teste')
                 ->type('email', 'teste@gmail.com')
                 ->press('Enviar')
-                ->waitForText('Dados da Vaga')
-                ->assertSee('Dados da Vaga');
+                ->waitForText('Dados da Vaga');
 
             #Edit
             $browser->clickLink('Editar')
