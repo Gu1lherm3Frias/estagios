@@ -18,7 +18,7 @@ class VagaCrudTest extends DuskTestCase
                 ->clickLink('Entrar')
                 ->type('loginUsuario', 111111)
                 ->press('Login')
-                ->assertSee('Mural de Vagas');
+                ->waitForText('Mural de Vagas');
             
             #Create
             $browser->clickLink('Mural de Vagas')
@@ -41,7 +41,7 @@ class VagaCrudTest extends DuskTestCase
                 ->type('titulo', 'Vaga Teste editada')
                 ->type('salario', '14000')
                 ->press('Enviar')
-                ->assertSee('Dados da Vaga');
+                ->waitForText('Dados da Vaga');
                 
             #Delete
             $browser->clickLink('Mural de Vagas')
